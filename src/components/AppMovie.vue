@@ -15,12 +15,14 @@ export default {
             <div>
                 <div>{{ myMovie.title }}</div>
                 <div>{{ myMovie.original_title }}</div>
-                <div>{{ myMovie.original_language }}</div>
+                <div><img :src="`../../node_modules/country-flag-icons/1x1/${myMovie.original_language.toUpperCase()}.svg`" class="flag"></div>
                 <div>{{ myMovie.vote_average }}</div>
             </div>
         </div>
     </div>
 </template>
-<style lang="scss">
-    
+<style lang="scss" scoped>
+    .flag{
+        width: 20px;
+    }
 </style>
