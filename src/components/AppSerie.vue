@@ -1,11 +1,11 @@
 <script>
 export default {
     props:{
-        myMovie: Object
+        mySerie: Object
     },
     methods:{
         getStars(){
-            let star = this.myMovie.vote_average;
+            let star = this.mySerie.vote_average;
             let vote = Math.round(star/2)
             console.log(vote);
             return vote
@@ -28,11 +28,11 @@ export default {
     <div class="container mt-5">
         <div class="row">
             <div class="col">
-                <div><img :src="`https://image.tmdb.org/t/p/w342/${myMovie.poster_path}`" class="img-fluid" alt="myMovie.info"></div>
-                <div>{{ myMovie.title }}</div>
-                <div>{{ myMovie.original_title }}</div>
+                <div><img :src="`https://image.tmdb.org/t/p/w342/${mySerie.poster_path}`" class="img-fluid" alt="mySerie.info"></div>
+                <div>{{ mySerie.title }}</div>
+                <div>{{ mySerie.original_title }}</div>
                 <div>
-                    <img :src="`../../node_modules/country-flag-icons/1x1/${myMovie.original_language.toUpperCase()}.svg`" class="flag">
+                    <img :src="`../../node_modules/country-flag-icons/1x1/${mySerie.original_language.toUpperCase()}.svg`" class="flag">
                 </div>
                 <div class="d-flex">
                     <div v-for="vote in getStars()"><i class="fa-solid fa-star"></i></div>

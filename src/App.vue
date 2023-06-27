@@ -21,19 +21,28 @@ export default {
     },
     methods:{
       searchMovie(){
-        console.log(store.searchText)
 
         let myUrl = store.apiUrl;
+        let myUrlSerie = store.apiUrlSerie;
+
 
         if(store.searchText !== ''){
           myUrl += `&query=${store.searchText}`;
+          myUrlSerie += `&query=${store.searchText}`;
+
         }
 
+        // Chiamata per riempire array movie
         axios.get(myUrl).then((response) => {
            store.moviesObj = response.data.results;
-           console.log(store.moviesObj);
            
         })
+        // Chiamata per riempire array serie tv
+        axios.get(myUrlSerie).then((response) => {
+           store.serieObj = response.data.results;
+           
+        })
+
     }
 
     }
