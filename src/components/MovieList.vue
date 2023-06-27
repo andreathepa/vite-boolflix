@@ -11,7 +11,8 @@ export default {
           store
         }
     
-    } 
+    }
+    
 }
 </script>
 <template lang="">

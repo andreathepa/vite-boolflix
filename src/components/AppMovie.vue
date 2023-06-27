@@ -2,6 +2,25 @@
 export default {
     props:{
         myMovie: Object
+    },
+    methods:{
+        getStars(){
+            let star = this.myMovie.vote_average;
+            let vote = Math.round(star/2)
+            console.log(vote);
+            return vote
+            
+
+        },
+
+        getNoStars(){
+            let noStars = 5 - this.getStars()
+            return noStars
+        }
+    },
+    mounted(){
+        this.getStars()
+        this.getNoStars
     }
 }
 </script>
@@ -15,7 +34,11 @@ export default {
                 <div>
                     <img :src="`../../node_modules/country-flag-icons/1x1/${myMovie.original_language.toUpperCase()}.svg`" class="flag">
                 </div>
-                <div>{{ myMovie.vote_average }}</div>
+                <div class="d-flex">
+                    <div v-for="vote in getStars()"><i class="fa-solid fa-star"></i></div>
+                    <div v-for="noStars in getNoStars()"><i class="fa-regular fa-star"></i></div>
+
+                </div>
             </div>
         </div>
     </div>
