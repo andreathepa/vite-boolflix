@@ -13,7 +13,7 @@ export default {
 }
 </script>
 <template lang="">
-    <div class="container-fluid background p-4">
+    <div class="container-fluid background p-5">
         <div class="row">
             <div class="col">
                 <div class="content">

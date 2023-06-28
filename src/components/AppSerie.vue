@@ -26,14 +26,14 @@ export default {
 </script>
 <template lang="">
     <div class="container mt-5">
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col">
                 <div class="content">
-                    <img :src="`https://image.tmdb.org/t/p/w342/${mySerie.poster_path}`" class="img-fluid" alt="mySerie.info">
+                    <img :src="`https://image.tmdb.org/t/p/w342/${mySerie.poster_path}`" class="img-card" alt="mySerie.info">
                     <div class="card-content">
-                        <div>{{ mySerie.name }}</div>
-                        <div>{{ mySerie.original_name }}</div>
-                        <div class="overview">{{ mySerie.overview }}</div>
+                        <div><strong>Titolo:</strong> {{ mySerie.name }} </div>
+                        <div><strong>Titolo originale:</strong> {{ mySerie.original_name }} </div>
+                        <div class="overview"><strong>Trama:</strong> {{ mySerie.overview }} </div>
                         <div>
                             <img :src="`../../node_modules/country-flag-icons/1x1/${mySerie.original_language.toUpperCase()}.svg`" class="flag">
                         </div>
