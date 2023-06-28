@@ -13,12 +13,16 @@ export default {
 }
 </script>
 <template lang="">
-    <div class="container mt-5">
+    <div class="container-fluid background p-4">
         <div class="row">
             <div class="col">
+                <div class="content">
+                    <img src="../assets/img/logo-boolflix@4x.png" class="logo" alt="">
+                </div>
+            </div>
+            <div class="col-3">
                 <div class="d-flex">
                     <input type="text" v-model="store.searchText" class="form-control" placeholder="Cerca qui il tuo film" @keyup.enter="$emit('search')">
-                    <button class="btn btn-sm btn-primary p-2 mx-2" @click="$emit('search')">Search</button>
 
                 </div>
 
@@ -28,5 +32,11 @@ export default {
     </div>
 </template>
 <style lang="scss" scoped>
-    
+
+    .background{
+        background-color: black;
+    }
+    .logo{
+        width:120px
+    }
 </style>
