@@ -29,11 +29,23 @@ export default {
         <div class="row">
             <div class="col">
                 <div class="content">
-                    <img :src="`https://image.tmdb.org/t/p/w342/${myMovie.poster_path}`" class="img-card" alt="myMovie.info">
+                    <div v-if="(myMovie.poster_path != null)">
+                        <img :src="`https://image.tmdb.org/t/p/w342/${myMovie.poster_path}`" class="img-card" alt="myMovie.info">
+                    </div>
+                    <div v-else class="not-found">
+                        <img src="../../public/notf.png" alt="" class="">
+                    </div>
+
                     <div class="card-content">
                         <div><strong>Titolo:</strong> {{ myMovie.title }} </div>
                         <div><strong>Titolo originale:</strong> {{ myMovie.original_title }} </div>
-                        <div class="overview"><strong>Trama:</strong> {{ myMovie.overview }} </div>
+                        <div v-if="(myMovie.overview != '')" class="overview">
+                            <strong>Trama:</strong> {{ myMovie.overview }} 
+                        </div>
+                        <div v-else class="overview">
+                            <strong>Trama:</strong> testo mancante 
+                        </div>
+
 
                         <div>
                             <img :src="`../../node_modules/country-flag-icons/1x1/${myMovie.original_language.toUpperCase()}.svg`" class="flag">

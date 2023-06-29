@@ -29,11 +29,19 @@ export default {
         <div class="row justify-content-center">
             <div class="col">
                 <div class="content">
-                    <img :src="`https://image.tmdb.org/t/p/w342/${mySerie.poster_path}`" class="img-card" alt="mySerie.info">
+                    <div v-if="(mySerie.poster_path != null)">
+                        <img :src="`https://image.tmdb.org/t/p/w342/${mySerie.poster_path}`" class="img-card" alt="mySerie.info">
+
+                    </div>
+                    <div v-else class="not-found">
+                        <img src="../../public/notf.png" alt="">
+                    </div>
                     <div class="card-content">
                         <div><strong>Titolo:</strong> {{ mySerie.name }} </div>
                         <div><strong>Titolo originale:</strong> {{ mySerie.original_name }} </div>
-                        <div class="overview"><strong>Trama:</strong> {{ mySerie.overview }} </div>
+                        <div class="overview">
+                            <strong>Trama:</strong> {{ mySerie.overview }} 
+                        </div>
                         <div>
                             <img :src="`../../node_modules/country-flag-icons/1x1/${mySerie.original_language.toUpperCase()}.svg`" class="flag">
                         </div>
